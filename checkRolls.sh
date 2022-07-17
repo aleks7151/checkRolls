@@ -5,7 +5,7 @@ roll=`./autoClientMassa.sh $HOME $massa_password wallet_info | grep "Final rolls
 if [ "$roll" -eq "0" ]
 then
         massa_wallet_address=`./autoClientMassa.sh $HOME $massa_password wallet_info | grep 'Address'| awk '{print $2}' | grep -Eo '^[a-Z|0-9]+'`
-	./autoClientMassa.sh $HOME $massa_password buy_rolls $massa_wallet_address
+		./autoClientMassa.sh $HOME $massa_password buy_rolls $massa_wallet_address
         echo "`date`	Final rolls = 0"
 else
         echo "`date`	All Okey ;)"
